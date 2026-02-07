@@ -5,44 +5,13 @@
   <title>Living Street</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Pixel-friendly defaults -->
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: #1c1b19;
-      color: #e6dccf;
-      font-family: monospace;
-    }
-
-    .screen {
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .card {
-      border: 2px solid #e6dccf;
-      padding: 16px 18px;
-      background: #2a2723;
-    }
-
-    button {
-      background: none;
-      border: 2px solid #e6dccf;
-      color: #e6dccf;
-      padding: 6px 10px;
-      font-family: monospace;
-      cursor: pointer;
-    }
-  </style>
+  <!-- Link the CSS file you just created -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- HOME SCREEN -->
-  <div class="screen">
+  <!-- HOME -->
+  <div id="home" class="screen">
     <div class="card">
       <h1>Living Street</h1>
       <p>A quiet neighborhood.</p>
@@ -50,11 +19,17 @@
     </div>
   </div>
 
-  <script>
-    document.getElementById("start").addEventListener("click", () => {
-      alert("Street will live here next.");
-    });
-  </script>
+  <!-- STREET (hidden until Start) -->
+  <div id="street" class="screen hidden">
+    <div class="card">
+      <h1>Street</h1>
+      <p>Next: one segment appears here.</p>
+      <button id="back">Back</button>
+    </div>
+  </div>
 
+  <!-- Link the JS file we’re about to create -->
+  <script src="main.js"></script>
 </body>
 </html>
+
