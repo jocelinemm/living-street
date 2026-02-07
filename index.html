@@ -21,10 +21,28 @@
 
   <!-- STREET (hidden until Start) -->
   <div id="street" class="screen hidden">
-    <div class="card">
-      <h1>Street</h1>
-      <p>Next: one segment appears here.</p>
-      <button id="back">Back</button>
+    <div class="streetFrame">
+      <div class="topBar">
+        <div class="brand">Living Street</div>
+        <div class="pill">Week 1 • Day 1</div>
+      </div>
+
+      <div class="streetViewport">
+        <div class="segment" data-seg="home">
+          <div class="segTitle">Home Segment</div>
+
+          <div class="building">
+            <div class="buildingSign">HOME</div>
+            <div class="buildingBody"></div>
+          </div>
+
+          <div class="segHint">Tap buildings later. Scroll comes next.</div>
+        </div>
+      </div>
+
+      <div class="bottomBar">
+        <button id="back">Back</button>
+      </div>
     </div>
   </div>
 
