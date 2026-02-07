@@ -79,3 +79,103 @@ button:hover {
 .hidden {
   display: none;
 }
+/* ===============================
+   Street – first brick
+   =============================== */
+
+.streetFrame{
+  width: min(920px, 96vw);
+  height: min(560px, 92vh);
+  background: #24211e;
+  border: 2px solid var(--border-main);
+  display: flex;
+  flex-direction: column;
+}
+
+.topBar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 10px 12px;
+  border-bottom: 2px solid var(--border-main);
+  background: #2a2723;
+}
+
+.brand{
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.pill{
+  border: 2px solid var(--border-main);
+  padding: 4px 8px;
+  color: var(--ink-dim);
+  font-size: 12px;
+}
+
+.streetViewport{
+  flex:1;
+  padding: 14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.segment{
+  width: min(680px, 92%);
+  height: 360px;
+  border: 2px solid var(--border-main);
+  background: #1f1d1a;
+  padding: 12px;
+  position: relative;
+}
+
+.segTitle{
+  color: var(--ink-dim);
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.building{
+  width: 210px;
+  height: 220px;
+  border: 2px solid var(--border-main);
+  background: #2a2723;
+  position: relative;
+}
+
+.buildingSign{
+  position:absolute;
+  top: -14px;
+  left: 10px;
+  background: #2a2723;
+  padding: 2px 8px;
+  border: 2px solid var(--border-main);
+  font-size: 12px;
+  color: var(--accent-warm);
+}
+
+.buildingBody{
+  position:absolute;
+  left: 14px;
+  top: 26px;
+  right: 14px;
+  bottom: 14px;
+  border: 2px dashed rgba(230,220,207,0.5);
+}
+
+.segHint{
+  position:absolute;
+  bottom: 10px;
+  left: 12px;
+  color: var(--ink-dim);
+  font-size: 12px;
+}
+
+.bottomBar{
+  padding: 10px 12px;
+  border-top: 2px solid var(--border-main);
+  background: #2a2723;
+  display:flex;
+  justify-content:flex-end;
+}
