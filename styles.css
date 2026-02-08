@@ -179,3 +179,47 @@ button:hover {
   display:flex;
   justify-content:flex-end;
 }
+/* ===============================
+   Street – scroll + snap (Option A)
+   =============================== */
+
+.streetViewport{
+  flex: 1;
+  padding: 0;
+  display: block;
+  overflow: hidden;
+}
+
+.streetScroller{
+  height: 100%;
+  display: flex;
+  gap: 16px;
+  padding: 14px;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.segment{
+  flex: 0 0 82%;
+  max-width: 680px;
+  height: 360px;
+  scroll-snap-align: center;
+
+  border: 2px solid var(--border-main);
+  background: #1f1d1a;
+  padding: 12px;
+  position: relative;
+}
+
+/* make it feel nicer on bigger screens */
+@media (min-width: 900px){
+  .segment{ flex-basis: 60%; }
+}
+
+/* hide scrollbar without breaking scroll */
+.streetScroller::-webkit-scrollbar{ height: 10px; }
+.streetScroller::-webkit-scrollbar-thumb{ background: rgba(230,220,207,0.25); }
+.streetScroller::-webkit-scrollbar-track{ background: rgba(0,0,0,0.1); }
