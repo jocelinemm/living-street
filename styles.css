@@ -223,3 +223,35 @@ button:hover {
 .streetScroller::-webkit-scrollbar{ height: 10px; }
 .streetScroller::-webkit-scrollbar-thumb{ background: rgba(230,220,207,0.25); }
 .streetScroller::-webkit-scrollbar-track{ background: rgba(0,0,0,0.1); }
+/* ===============================
+   Map / overview toggle
+   =============================== */
+
+.topRight{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.miniBtn{
+  padding: 4px 8px;
+  font-size: 12px;
+  border: 2px solid var(--border-main);
+  color: var(--ink-main);
+  background: rgba(0,0,0,0.0);
+}
+
+.miniBtn:active{
+  transform: translateY(1px);
+}
+
+/* overview mode: shrink segments slightly, add breathing room */
+.streetScroller.overview .segment{
+  flex-basis: 52%;
+  height: 300px;
+  opacity: 0.96;
+}
+
+@media (min-width: 900px){
+  .streetScroller.overview .segment{ flex-basis: 40%; }
+}
