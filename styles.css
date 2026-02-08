@@ -255,3 +255,41 @@ button:hover {
 @media (min-width: 900px){
   .streetScroller.overview .segment{ flex-basis: 40%; }
 }
+/* ===============================
+   Gentle arrow hint (one-time)
+   =============================== */
+
+.scrollHint{
+  position: fixed;
+  left: 50%;
+  bottom: 84px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 2500;
+  pointer-events: none;
+}
+
+.hintArrow{
+  width: 16px;
+  height: 16px;
+  border-right: 4px solid rgba(230,220,207,0.9);
+  border-bottom: 4px solid rgba(230,220,207,0.9);
+  transform: rotate(-45deg);
+  animation: hintWiggle 1.2s ease-in-out infinite;
+}
+
+.hintText{
+  padding: 6px 10px;
+  border: 2px solid rgba(230,220,207,0.7);
+  background: rgba(42,39,35,0.8);
+  color: rgba(230,220,207,0.9);
+  font-size: 12px;
+}
+
+@keyframes hintWiggle{
+  0%{ transform: rotate(-45deg) translateX(0); }
+  50%{ transform: rotate(-45deg) translateX(5px); }
+  100%{ transform: rotate(-45deg) translateX(0); }
+}
