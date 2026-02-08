@@ -62,3 +62,48 @@ startBtn?.addEventListener("click", () => {
   // let layout paint first
   setTimeout(showHintOnce, 150);
 });
+// ===== Modal (reusable) =====
+const modal = document.getElementById("modal");
+const modalTitle = document.getElementById("modalTitle");
+const modalBody = document.getElementById("modalBody");
+const modalClose = document.getElementById("modalClose");
+
+function openModal(title, bodyHtml) {
+  modalTitle.textContent = title;
+  modalBody.innerHTML = bodyHtml;
+  modal.classList.remove("hidden");
+}
+
+function closeModal() {
+  modal.classList.add("hidden");
+}
+
+modalClose?.addEventListener("click", closeModal);
+modal?.addEventListener("click", (e) => {
+  // tap outside closes
+  if (e.target === modal) closeModal();
+});
+
+// ===== Building tap handlers =====
+function bindBuildingTaps() {
+  const segments = document.querySelectorAll(".segment");
+  segments.forEach(seg => {
+    const segName = seg.dataset.seg || "place";
+    const building = seg.querySelector(".building");
+    if (!building) return;
+
+    building.addEventListener("click", () => {
+      openModal(
+        segName.toUpperCase(),
+        `
+          <p><strong>${segName}</strong> — coming online soon.</p>
+          <p>This is where upgrades, rituals, and street life will live.</p>
+          <p style="opacity:.85;">(Next: Enter Home + first ritual hooks.)</p>
+        `
+      );
+    });
+  });
+}
+
+// Bind once on load
+bindBuildingTaps();
